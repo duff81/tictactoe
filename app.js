@@ -35,19 +35,20 @@ function cellClicked() {
             ((cells[2].textContent == "X") && (cells[4].textContent == "X") && (cells[6].textContent == "X"))) {
 
             document.getElementById("Title").innerHTML = "X WINS!";
-            
+
             if (document.getElementById("Title").innerHTML == "X WINS!") {
-            
-            
-            function first(){
-                document.addEventListener('click', second);
-            }
-            function second(){
-                location.reload();
-            // document.addEventListener('click', function end() {
-            //     gameOver();
-            //     document.removeEventListener('click', end);
-            }});
+
+
+                function first() {
+                    document.addEventListener('click', second);
+                }
+                function second() {
+                    location.reload();
+                    // document.addEventListener('click', function end() {
+                    //     gameOver();
+                    //     document.removeEventListener('click', end);
+                }
+            };
         }
 
         //console.log('x wins')
@@ -74,7 +75,7 @@ function cellClicked() {
             console.log(event.target.textContent)
         }
     }
-    
+
 }
 
 // function gameOver() {
