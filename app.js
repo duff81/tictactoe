@@ -20,7 +20,7 @@ for (let i = 0; i < cells.length; i++) {
 
 
 function cellClicked(event) {
-    event.stopPropagation();
+    event.stopPropagation(); //allows orignal event listner not to interfere with end function
     clickCount++;
     if (event.target.textContent == '') {
         if (clickCount % 2 == 0) {
@@ -41,7 +41,7 @@ function cellClicked(event) {
                 ((cells[2].textContent == "X") && (cells[5].textContent == "X") && (cells[8].textContent == "X")) ||
                 ((cells[0].textContent == "X") && (cells[4].textContent == "X") && (cells[8].textContent == "X")) ||
                 ((cells[2].textContent == "X") && (cells[4].textContent == "X") && (cells[6].textContent == "X"))) {
-            document.getElementById("Title").innerHTML = "X WINS!";
+            document.getElementById("Title").innerHTML = "X WINS!";// the if statement is looking for 3 in a row
             for (let i = 0; i < cells.length; i++) {
                 cells[i].removeEventListener('click', cellClicked)
 
@@ -88,7 +88,7 @@ function cellClicked(event) {
             });
 
         }
-    }
+    }//this is how the game resets itself
     function gameOver() {
         console.log("game over")
         document.getElementById("Title").innerHTML = "Tic Tac Toe"
